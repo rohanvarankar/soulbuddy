@@ -1,3 +1,44 @@
+/* styles/globals.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@keyframes fireEffect {
+  0% { color: #FF4500; }
+  50% { color: #FF6347; }
+  100% { color: #FF4500; }
+}
+
+.fireEffect {
+  animation: fireEffect 1.5s infinite;
+}
+
+/* Glow effect for buttons */
+.glow-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.glow-button:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background: rgba(255, 255, 255, 0.5);
+  animation: glowing 1.5s infinite;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes glowing {
+  0% {
+    box-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00, 0 0 15px #00ff00;
+  }
+  50% {
+    box-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00, 0 0 40px #00ff00;
+  }
+  100% {
+    box-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00, 0 0 15px #00ff00;
+  }
+}
